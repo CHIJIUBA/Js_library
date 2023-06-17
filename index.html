@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Book Library</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/git_image.png" alt="github_logo">
+            The Odin Book Library
+        </div>
+        <div class="right-link">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <!-- <li><a href="#">Community</a></li> -->
+            </ul>
+            <img src="images/chijiuba.jpg" alt="profile_picture">
+        </div>
+    </header>
+    <div class="contents">
+        <!-- <div class="sidebar">
+
+        </div> -->
+        <div class="container">
+            <div class="body">
+                <div class="top">
+                    Welcome to my JavaScript Library
+                    <button id="myBtn" class="myBtn">Add Book</button>
+                     <!-- The Modal -->
+                     <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2 id="optitle"></h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form">
+                                <form action="#" method="post" id="myForm">
+                                    <label for="title">Book Title</label>
+                                    <input type="text" placeholder="" id="title" required>
+                                    <div class="forgot-password">
+                                        <label for="author">Book Author</label>
+                                        <!-- <a href="#"> Forgot Password?</a> -->
+                                    </div>
+                                    <input type="text" placeholder="" id="author" required> 
+                                    <label for="pages" >Book Pages</label>
+                                    <input type="number" placeholder="" id="pages" required>
+                                    <label for="read">have you read it ?</label>
+                                    <input type="checkbox" name="haveread" id="read">
+                                    <input type="hidden" id="operationtype">
+                                    <input type="hidden" id="bookId">
+                                    <button type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <h3>Modal Footer</h3>
+                        </div> -->
+                        </div>
+                    
+                    </div>
+                </div>
+                <hr>
+                <div class="putting" id="putting">
+                   
+                    <!-- <div class="panel">
+                        <div class="panel-header">
+                            Think Big
+                        </div>
+                        <div class="panel-body">
+                            <p>Title: Think Big</p>
+                            <p>Author: Ben Carson</p>
+                            <p>Pages: 340</p>
+                            <p>Not Read Yet</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="myBtn">Edit</button>
+                            <button class="myBtn">Remove</button>
+                        </div>
+                    </div>   -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
