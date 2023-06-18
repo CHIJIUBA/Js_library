@@ -65,8 +65,10 @@ function addBookToLibrary(book) {
  * @param {The index of the book in the array} index
 */
 function deleteBook(element, index){
-    putting.removeChild(element);
-    myLibrary.splice(index, 1);
+    if(confirm(`Are you sure you want to delete ${myLibrary[index].title}`)){
+        putting.removeChild(element);
+        myLibrary.splice(index, 1);
+    }
 }
 
 /** 
@@ -84,6 +86,7 @@ function editBook(bookTitle, bookAuthor, bookPages, bookRead, bookId) {
     formTitle.value = bookTitle;
     formAuthor.value = bookAuthor;
     formPages.value = bookPages;
+    formRead.checked = bookRead;
     document.getElementById('bookId').value = bookId;
     operationtype.value = "Edit";
 
@@ -96,7 +99,7 @@ function clearForm() {
     document.getElementById('title').value = "";
     document.getElementById('author').value = "";
     document.getElementById('pages').value = "";
-    document.getElementById('read').value = "";
+    document.getElementById('read').checked = false;
     operationtype.value = "";
 }
 
@@ -114,7 +117,7 @@ myForm.onsubmit = (e) => {
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').value;
+    let read = document.getElementById('read').checked;
     let bookId = document.getElementById('bookId').value
     modal.style.display = "none";
 
@@ -125,12 +128,12 @@ myForm.onsubmit = (e) => {
         myLibrary[bookId].pages = pages;
         myLibrary[bookId].read = read;
         showBooks();
+        alert("Updated Successfully");
     }
     else {
         if(title != "" && author != "" && pages != ""){
             clearForm()
             addBookToLibrary(new Book(title, author, pages, read));
-            console.log(myLibrary);
             showBooks();
         }
     }
@@ -171,7 +174,7 @@ function showBooks(){
         titleP.innerHTML = item.title;
         authorP.innerHTML = item.author;
         pagesP.innerHTML = item.pages;
-        readP.innerHTML = "Already Read";
+        (item.read == true) ? readP.innerHTML = "Already Read" : readP.innerHTML = "Not Read";
 
         editBtn.innerHTML = "Edit";
         removeBtn.innerHTML = "Remove";
